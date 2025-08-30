@@ -18,7 +18,7 @@ const Navbar = ({ items }: NavbarProps) => {
   return (
     <nav className="sticky top-0 z-20">
       <div className={`${navbar} ${app.border} ${app.appearance}`}>
-        <h2 className="text-lg font-bold">OL Mgmt PRO</h2>
+        <h2 className="text-lg font-bold">Ol Mgmt Pro</h2>
         <ul className="flex gap-6">
           {items &&
             items.map((item, index) => (
