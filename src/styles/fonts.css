@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Fredoka";
+  src: local("Fredoka"),
+    url("../../public/fonts/Fredoka/Fredoka-VariableFont_wdth\,wght.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+    url("../../public/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: semibold;
+}
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("../../public/fonts/Poppins/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "Bangers";
+  src: local("bangers"), url("../../public/fonts/Bangers/Bangers-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("montserrat"),
+    url("../../public/fonts/Montserrat/static/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "Riffic";
+  src: local("riffic"), url("../../public/fonts/Riffic/riffic.bold.ttf");
+}

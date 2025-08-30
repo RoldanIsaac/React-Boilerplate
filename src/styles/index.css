@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --primary: hsl(220, 68%, 42%);
+  --primary-light: hsl(220, 68%, 62%);
+  --secondary: hsl(218, 18%, 79%);
+  --secondary-dark: hsl(218, 18%, 59%);
+
+  --font-basic: 14px;
+
+  --text-primary: white;
+  --text-via: rgb(217, 236, 127);
+  --text-secondary: black;
+}
+
+@theme {
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+@layer components {
+  /* Typography  */
+  .app-hero {
+    @apply text-5xl font-bold;
+  }
+
+  .app-title {
+    @apply text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-secondary)] via-[var(--text-via)] to-[var(--text-secondary)];
+  }
+
+  .app-subtitle {
+    @apply text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-secondary)] via-[var(--text-via)] to-[var(--text-secondary)];
+  }
+
+  .app-text {
+    @apply text-gray-800 text-sm;
+  }
+
+  /* Buttons  */
+  [class*="app-button"] {
+    @apply text-sm py-2 px-8 rounded-xl transition-all cursor-pointer shadow-md;
+  }
+
+  .app-button-primary {
+    @apply bg-[var(--primary)] hover:bg-[var(--primary-light)] text-[var(--text-primary)];
+  }
+
+  .app-button-secondary {
+    @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-[var(--text-secondary)];
+  }
+
+  /* Containers  */
+  .app-card {
+    @apply bg-gray-50 p-4 shadow-md rounded-xl;
+  }
+
+  .app-cta-container {
+    @apply flex flex-row gap-1;
+  }
+}
