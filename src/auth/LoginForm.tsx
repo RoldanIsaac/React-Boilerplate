@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-const Login = (props: Props) => {
+const LoginForm = (props: Props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -71,4 +71,4 @@ const Login = (props: Props) => {
   );
 };
 
-export default Login;
+export default LoginForm;
