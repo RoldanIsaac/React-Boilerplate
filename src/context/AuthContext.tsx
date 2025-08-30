@@ -14,12 +14,14 @@ const AuthContext = createContext<AuthContextType>({
   logout: async () => {},
 });
 
-export function AuhtProvider({ children }: { children: React.ReactNode }) {
+export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("jere");
+      console.log(currentUser);
       setUser(currentUser);
       setLoading(false);
     });

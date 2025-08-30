@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_AUTH_DOMAIN",
-  projectId: "TU_PROJECT_ID",
-  storageBucket: "TU_STORAGE_BUCKET",
-  messagingSenderId: "TU_MESSAGING_SENDER_ID",
-  appId: "TU_APP_ID",
+  apiKey: "AIzaSyBlkIbIFRb-zqSNkjQ85Vl98vLyi1IN5BQ",
+  authDomain: "starter-fireb-app.firebaseapp.com",
+  projectId: "starter-fireb-app",
+  storageBucket: "starter-fireb-app.appspot.com",
+  messagingSenderId: "99847643822",
+  appId: "1:99847643822:web:3dad53f8c91730ba24833f",
+  measurementId: "G-0S95ERESS5",
 };
 
 // Initialize

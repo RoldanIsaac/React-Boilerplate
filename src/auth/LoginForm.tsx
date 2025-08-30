@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Section from "../layout/Section";
 import { stackedWavesSvgBg } from "../assets";
 import { useNavigate } from "react-router-dom";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 type Props = {};
 
@@ -18,7 +18,7 @@ const LoginForm = (props: Props) => {
     e.preventDefault();
     setError("");
     try {
-      //   await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       alert("Login exitoso 🚀");
       navigate("/dashboard");
     } catch (err: any) {

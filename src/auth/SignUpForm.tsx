@@ -1,7 +1,6 @@
-// src/components/SignUpForm.tsx
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../firebase";
+import { auth } from "../firebase";
 
 export default function SignUpForm() {
   const [email, setEmail] = useState("");
@@ -21,7 +20,7 @@ export default function SignUpForm() {
     }
 
     try {
-      //   await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       setSuccess("Usuario creado correctamente 🚀");
       setEmail("");
       setPassword("");
