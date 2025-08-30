@@ -40,4 +40,8 @@ export const navItems = [
     label: "Crypto",
     path: "/crypto",
   },
+  {
+    label: "Profile",
+    path: "/profile",
+  },
 ];

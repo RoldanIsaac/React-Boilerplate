@@ -8,7 +8,6 @@ type Props = {
 
 const PrivateRoute = ({ children }: Props) => {
   const { user, loading } = useAuth();
-  console.log(loading);
   if (loading) return <p className="text-center mt-10">Loading...</p>;
   return user ? children : <Navigate to="/" replace />;
 };

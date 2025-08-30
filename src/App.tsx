@@ -4,6 +4,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./views/Dashboard";
 import Landing from "./views/Landing";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Profile from "./views/Profile";
 
 const App = () => {
   return (
@@ -18,6 +19,14 @@ const App = () => {
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
               </PrivateRoute>
             }
           />
