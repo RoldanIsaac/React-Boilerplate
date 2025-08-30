@@ -1,4 +1,4 @@
-import Section from "../layout/Section/Section";
+import Section from "../layout/Section";
 import { mockCards } from "../constants";
 import { stackedWavesSvgBg } from "../assets";
 import { layout, section } from "../styles/styles";

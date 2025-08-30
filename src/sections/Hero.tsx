@@ -1,4 +1,4 @@
-import Section from "../layout/Section/Section";
+import Section from "../layout/Section";
 import { scanGif, stackedWavesSvgBg } from "../assets";
 import { layout, section } from "../styles/styles";
 

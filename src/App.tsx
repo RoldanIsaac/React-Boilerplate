@@ -1,7 +1,7 @@
+import Login from "./auth/LoginForm";
 import Dashboard from "./views/Dashboard";
 import Landing from "./views/Landing";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Login from "./views/Login";
 
 const App = () => {
   return (
