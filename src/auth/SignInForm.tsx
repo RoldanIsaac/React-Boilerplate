@@ -7,7 +7,7 @@ import { auth } from "../firebase";
 
 type Props = {};
 
-const LoginForm = (props: Props) => {
+const SignInForm = (props: Props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,7 +19,6 @@ const LoginForm = (props: Props) => {
     setError("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Login exitoso 🚀");
       navigate("/dashboard");
     } catch (err: any) {
       setError(err.message);
@@ -58,17 +57,27 @@ const LoginForm = (props: Props) => {
               className="app-input w-full"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="********"
             />
           </div>
 
-          <button type="submit" className="w-full app-button-primary">
-            Ingresar
-          </button>
+          <div className="app-cta-container">
+            <button type="submit" className="w-full app-button-primary">
+              Log In
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/signup");
+              }}
+              className="w-full app-button-primary"
+            >
+              Register
+            </button>
+          </div>
         </form>
       </div>
     </Section>
   );
 };
 
-export default LoginForm;
+export default SignInForm;

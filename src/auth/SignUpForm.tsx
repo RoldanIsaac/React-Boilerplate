@@ -1,6 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase";
+import Section from "../layout/Section";
+import { stackedWavesSvgBg } from "../assets";
 
 export default function SignUpForm() {
   const [email, setEmail] = useState("");
@@ -15,13 +17,13 @@ export default function SignUpForm() {
     setSuccess("");
 
     if (password !== confirm) {
-      setError("Las contraseñas no coinciden");
+      setError("Passwords do not match");
       return;
     }
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess("Usuario creado correctamente 🚀");
+      setSuccess("User created successfully! 🚀");
       setEmail("");
       setPassword("");
       setConfirm("");
@@ -31,66 +33,66 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <form
-        onSubmit={handleSignUp}
-        className="bg-white shadow-lg rounded-2xl p-8 w-96"
-      >
-        <h2 className="text-2xl font-bold text-center mb-6">Registro</h2>
-
-        {error && (
-          <p className="bg-red-100 text-red-600 text-sm p-2 mb-4 rounded">
-            {error}
-          </p>
-        )}
-        {success && (
-          <p className="bg-green-100 text-green-600 text-sm p-2 mb-4 rounded">
-            {success}
-          </p>
-        )}
-
-        <div className="mb-4">
-          <label className="block mb-1 text-sm font-medium">Email</label>
-          <input
-            type="email"
-            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="tuemail@correo.com"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-1 text-sm font-medium">Password</label>
-          <input
-            type="password"
-            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="********"
-          />
-        </div>
-
-        <div className="mb-6">
-          <label className="block mb-1 text-sm font-medium">
-            Confirmar Password
-          </label>
-          <input
-            type="password"
-            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-            placeholder="********"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition"
+    <Section
+      className="h-screen flex items-center justify-center"
+      svgBg={stackedWavesSvgBg}
+    >
+      <div className="flex items-center justify-center h-screen">
+        <form
+          onSubmit={handleSignUp}
+          className="bg-white shadow-lg rounded-2xl p-8 w-96"
         >
-          Registrarse
-        </button>
-      </form>
-    </div>
+          <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+
+          {error && (
+            <p className="bg-red-100 text-red-600 text-sm p-2 mb-4 rounded">
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className="bg-green-100 text-green-600 text-sm p-2 mb-4 rounded">
+              {success}
+            </p>
+          )}
+
+          <div className="mb-4">
+            <label className="block mb-1 text-sm font-medium">Email</label>
+            <input
+              type="email"
+              className="app-input w-full"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your-email@gmail.com"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-1 text-sm font-medium">Password</label>
+            <input
+              type="password"
+              className="app-input w-full"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block mb-1 text-sm font-medium">
+              Password Confirmation
+            </label>
+            <input
+              type="password"
+              className="app-input w-full"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+            />
+          </div>
+
+          <button type="submit" className="w-full app-button-primary">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </Section>
   );
 }

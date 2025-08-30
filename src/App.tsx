@@ -1,4 +1,4 @@
-import LoginForm from "./auth/LoginForm";
+import SignInForm from "./auth/SignInForm";
 import SignUpForm from "./auth/SignUpForm";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./views/Dashboard";
@@ -11,7 +11,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginForm />} />
+          <Route path="/" element={<SignInForm />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/landing" element={<Landing />} />
           <Route
