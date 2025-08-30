@@ -11,13 +11,37 @@
   --text-primary: white;
   --text-via: rgb(217, 236, 127);
   --text-secondary: black;
+
+  --gray-100: rgb(227, 227, 227);
+  --gray-800: rgb(56, 56, 56);
+  --gray-900: rgb(18, 18, 18);
+  --text-color--dark: rgb(164, 164, 164);
+  --text-color--light: rgb(67, 67, 67);
+
+  /* // subtitle : 700 24px gray-100) | light ->  black  */
+}
+
+[data-theme="light"] {
+  --bg-color: white;
+  --title-color: var(--gray-900);
+  --text-color: var(--text-color--light);
+  --border-color: var(--gray-100);
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--gray-900);
+  --title-color: var(var(--gray-100));
+  --text-color: var(--text-color--dark);
+  --border-color: var(--gray-800);
 }
 
 @theme {
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: "Inter";
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 @layer components {
@@ -57,6 +81,10 @@ body {
 
   .app-button-secondary {
     @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-[var(--text-secondary)];
+  }
+
+  .app-circle-button {
+    @apply p-2 rounded-full cursor-pointer transition bg-[var(--border-color)];
   }
 
   /* Inputs  */
