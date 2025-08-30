@@ -23,24 +23,28 @@ body {
 @layer components {
   /* Typography  */
   .app-hero {
-    @apply text-5xl font-bold;
+    @apply text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-secondary)] via-[var(--text-via)] to-[var(--text-secondary)];
   }
 
   .app-title {
-    @apply text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-secondary)] via-[var(--text-via)] to-[var(--text-secondary)];
+    @apply text-3xl font-bold text-gray-800;
   }
 
   .app-subtitle {
-    @apply text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-secondary)] via-[var(--text-via)] to-[var(--text-secondary)];
+    @apply text-xl font-semibold text-gray-800;
   }
 
   .app-text {
     @apply text-gray-800 text-sm;
   }
 
+  .app-text-error {
+    @apply bg-red-100 text-red-600 text-sm p-2 mb-4 rounded;
+  }
+
   /* Buttons  */
   [class*="app-button"] {
-    @apply text-sm py-2 px-8 rounded-xl transition-all cursor-pointer shadow-md;
+    @apply text-sm py-3 px-8 rounded-xl transition-all cursor-pointer shadow-md;
   }
 
   .app-button-primary {
@@ -49,6 +53,11 @@ body {
 
   .app-button-secondary {
     @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-[var(--text-secondary)];
+  }
+
+  /* Inputs  */
+  .app-input {
+    @apply border rounded-xl px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500;
   }
 
   /* Containers  */
