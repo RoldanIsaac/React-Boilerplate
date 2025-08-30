@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Section from "../layout/Section";
 import { stackedWavesSvgBg } from "../assets";
+import { useNavigate } from "react-router-dom";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../firebase";
 
@@ -11,12 +12,15 @@ const Login = (props: Props) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  let navigate = useNavigate();
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     try {
       //   await signInWithEmailAndPassword(auth, email, password);
       alert("Login exitoso 🚀");
+      navigate("/dashboard");
     } catch (err: any) {
       setError(err.message);
     }
@@ -37,7 +41,7 @@ const Login = (props: Props) => {
           {error && <p className="app-text-error">{error}</p>}
 
           <div className="mb-4">
-            <label className="block mb-1 text-sm font-medium">Email</label>
+            <label className="app-label block">Email</label>
             <input
               type="email"
               className="app-input w-full"
@@ -48,7 +52,7 @@ const Login = (props: Props) => {
           </div>
 
           <div className="mb-6">
-            <label className="block mb-1 text-sm font-medium">Password</label>
+            <label className="app-label block">Password</label>
             <input
               type="password"
               className="app-input w-full"
