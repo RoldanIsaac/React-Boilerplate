@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
 import { navItems } from "../constants";
+import Navbar from "../layout/Navbar";
+import Sidebar from "../layout/Sidebar";
 
 type Props = {};
 
