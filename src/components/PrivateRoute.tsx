@@ -1,9 +1,9 @@
-import * as React from "react";
 import { useAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const PrivateRoute = ({ children }: Props) => {
