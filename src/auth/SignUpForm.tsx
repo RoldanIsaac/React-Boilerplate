@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { auth } from "../firebase";
+// import { auth } from "../firebase";
 import Section from "../layout/Section";
 import { stackedWavesSvgBg } from "../assets";
 
@@ -16,20 +16,20 @@ export default function SignUpForm() {
     setError("");
     setSuccess("");
 
-    if (password !== confirm) {
-      setError("Passwords do not match");
-      return;
-    }
+    // if (password !== confirm) {
+    //   setError("Passwords do not match");
+    //   return;
+    // }
 
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess("User created successfully! 🚀");
-      setEmail("");
-      setPassword("");
-      setConfirm("");
-    } catch (err: any) {
-      setError(err.message);
-    }
+    // try {
+    //   await createUserWithEmailAndPassword(auth, email, password);
+    //   setSuccess("User created successfully! 🚀");
+    //   setEmail("");
+    //   setPassword("");
+    //   setConfirm("");
+    // } catch (err: any) {
+    //   setError(err.message);
+    // }
   };
 
   return (
@@ -42,7 +42,7 @@ export default function SignUpForm() {
           onSubmit={handleSignUp}
           className="bg-white shadow-lg rounded-2xl p-8 w-96"
         >
-          <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+          <h2 className="text-2xl font-bold text-left mb-6">Sign Up</h2>
 
           {error && (
             <p className="bg-red-100 text-red-600 text-sm p-2 mb-4 rounded">

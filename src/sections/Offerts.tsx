@@ -14,8 +14,8 @@ const Offerts = (props: Props) => {
             <div className="app-card" key={index}>
               <h1 className="app-title">{card.title}</h1>
               <h1 className="app-subtitle">{card.subtitle}</h1>
-              <p className="app-text">{card.content}</p>
-              <div className="app-cta-container">
+              <p>{card.content}</p>
+              <div className="flex flex-row gap-2">
                 <button className="app-button-primary"> Add </button>
                 <button className="app-button-secondary"> Remove </button>
               </div>
