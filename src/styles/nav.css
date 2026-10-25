@@ -1,0 +1,18 @@
+nav {
+  /* Check if there has been a scroll */
+  @container (not scroll-state(scrolled:none)) {
+    position: sticky;
+    top: 0;
+    transition: translate 0.3s;
+  }
+
+  /* Hide when you scroll down */
+  @container scroll-state(scrolled: bottom) {
+    translate: 0 -100%;
+  }
+
+  /* Appear when you scroll back up */
+  @container scroll-state(scrolled: top) {
+    translate: 0 0;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Section from "../layout/Section";
 import { stackedWavesSvgBg } from "../assets";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../firebase";
 
@@ -63,21 +63,15 @@ const SignInForm = (props: Props) => {
           </div>
 
           <div className="flex flex-row gap-2">
-            <button
-              type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md"
-            >
-              Sign In
+            <button type="submit" className="btn btn-primary w-full">
+              Sign In →
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                navigate("/signup");
-              }}
-              className="w-full app-button-secondary"
+            <Link
+              to="/auth/sign-up"
+              className="w-full btn btn-secondary text-center leading-8.5"
             >
               Register
-            </button>
+            </Link>
           </div>
         </form>
       </div>

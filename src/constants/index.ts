@@ -1,19 +1,19 @@
 export const mockCards = [
   {
-    title: "Orlando",
-    subtitle: "Orlando",
+    title: "Benfits & Reminder",
+    subtitle: "Apr, Tue 16, 2026",
     content:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptatum ipsam inventore omnis, iste voluptas quod magnam velit debitis soluta quae, alias commodi fugit aliquid iusto repellat optio sapiente? Hic.",
   },
   {
-    title: "Orlando",
-    subtitle: "Orlando",
+    title: "Life and Fight",
+    subtitle: "Jun, Wed 1, 2026",
     content:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptatum ipsam inventore omnis, iste voluptas quod magnam velit debitis soluta quae, alias commodi fugit aliquid iusto repellat optio sapiente? Hic.",
   },
   {
-    title: "Orlando",
-    subtitle: "Orlando",
+    title: "Thriller",
+    subtitle: "Aug, Fri 5, 2026",
     content:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptatum ipsam inventore omnis, iste voluptas quod magnam velit debitis soluta quae, alias commodi fugit aliquid iusto repellat optio sapiente? Hic.",
   },

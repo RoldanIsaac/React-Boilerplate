@@ -3,6 +3,7 @@ import { useState } from "react";
 // import { auth } from "../firebase";
 import Section from "../layout/Section";
 import { stackedWavesSvgBg } from "../assets";
+import { Link } from "react-router-dom";
 
 export default function SignUpForm() {
   const [email, setEmail] = useState("");
@@ -40,9 +41,16 @@ export default function SignUpForm() {
       <div className="flex items-center justify-center h-screen">
         <form
           onSubmit={handleSignUp}
-          className="bg-white shadow-lg rounded-2xl p-8 w-96"
+          className="text-white border border-gray-200/80 bg-gray-800 rounded-xl p-8 w-96"
         >
-          <h2 className="text-2xl font-bold text-left mb-6">Sign Up</h2>
+          <div className="mb-6 pl-1 flex flex-row gap-1">
+            <p className="rotate-180 -translate-y-0.25"> → </p>
+            <Link to="/auth/sign-in" className="hover:underline">
+              Back
+            </Link>
+          </div>
+
+          <h2 className="app-title text-left mb-4">Become a member</h2>
 
           {error && (
             <p className="bg-red-100 text-red-600 text-sm p-2 mb-4 rounded">
@@ -55,40 +63,40 @@ export default function SignUpForm() {
             </p>
           )}
 
-          <div className="mb-4">
-            <label className="block mb-1 text-sm font-medium">Email</label>
-            <input
-              type="email"
-              className="app-input w-full"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your-email@gmail.com"
-            />
+          <div className="flex flex-col gap-4 mb-8">
+            <div>
+              <label className="app-label block">Email</label>
+              <input
+                type="email"
+                className="app-input w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your-email@gmail.com"
+              />
+            </div>
+
+            <div>
+              <label className="app-label block">Password</label>
+              <input
+                type="password"
+                className="app-input w-full"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <label className="app-label block">Password Confirmation</label>
+              <input
+                type="password"
+                className="app-input w-full"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+              />
+            </div>
           </div>
 
-          <div className="mb-4">
-            <label className="block mb-1 text-sm font-medium">Password</label>
-            <input
-              type="password"
-              className="app-input w-full"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-6">
-            <label className="block mb-1 text-sm font-medium">
-              Password Confirmation
-            </label>
-            <input
-              type="password"
-              className="app-input w-full"
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
-            />
-          </div>
-
-          <button type="submit" className="w-full app-button-primary">
+          <button type="submit" className="btn btn-primary w-full">
             Sign Up
           </button>
         </form>

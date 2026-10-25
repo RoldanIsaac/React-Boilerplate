@@ -14,9 +14,6 @@ export const text = {
   hero: `text-white font-bold text-5xl`,
 };
 
-export const navbar =
-  "relative z-20 flex h-16 w-full items-center justify-between gap-2 border-b px-4 lg:px-8";
-
 export const app = {
   //   border: "border-gray-50 dark:border-gray-800",
   //   appearance: "bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100",

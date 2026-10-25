@@ -42,7 +42,7 @@ body {
   font-family: "Inter";
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 @layer components {
@@ -80,13 +80,19 @@ body {
     @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-[var(--text-secondary)];
   }
 
-  .app-circle-button {
-    @apply p-2 rounded-full cursor-pointer transition bg-[var(--border-color)];
-  }
-
   /* Inputs  */
   .app-input {
-    @apply border rounded-md px-3 h-12 outline-none focus:ring-2 focus:ring-blue-500;
+    @apply border rounded-md px-3 h-[36px] outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  .btn {
+    @apply h-[36px] px-4 rounded-md font-light;
+  }
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+  .btn-secondary {
+    @apply border border-blue-500;
   }
 
   /* Containers  */

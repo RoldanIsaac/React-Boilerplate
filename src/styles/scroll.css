@@ -1,0 +1,39 @@
+html {
+  scrollbar-width: none;
+}
+
+.animate\:increase {
+  transform-origin: top;
+  animation: increase linear;
+  animation-timeline: view();
+  animation-range: exit;
+}
+.animate\:decrease {
+  transform-origin: top;
+  animation: decrease linear;
+  animation-timeline: view();
+  animation-range: enter;
+  scale: 1.7;
+}
+
+@keyframes increase {
+  25% {
+    opacity: 1;
+  }
+  85%,
+  100% {
+    opacity: 0;
+    scale: 2;
+  }
+}
+
+@keyframes decrease {
+  25% {
+    opacity: 0;
+  }
+  85%,
+  100% {
+    opacity: 1;
+    scale: 0.8;
+  }
+}

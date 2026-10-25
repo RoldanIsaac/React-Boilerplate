@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/index.css";
 import "./styles/fonts.css";
+import "./styles/scroll.css";
+import "./styles/nav.css";
 import App from "./App.tsx";
 import ThemeProvider from "./context/ThemeProvider.tsx";
 // import { AuthProvider } from "./context/AuthContext.tsx";

@@ -1,0 +1,13 @@
+@keyframes slideMask {
+  from {
+    x: -100%;
+  }
+
+  to {
+    x: 100%;
+  }
+}
+
+.mask-rect {
+  animation: slideMask 3.5s ease infinite;
+}

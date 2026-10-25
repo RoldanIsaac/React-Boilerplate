@@ -1,39 +1,69 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import Loading from "./shared/Loading";
+import Landing from "./pages/Landing/Landing";
 import SignInForm from "./auth/SignInForm";
 import SignUpForm from "./auth/SignUpForm";
-import PrivateRoute from "./components/PrivateRoute";
-import Dashboard from "./views/Dashboard";
-import Landing from "./views/Landing";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Profile from "./views/Profile";
+import Profile from "./pages/Profile";
 
-const App = () => {
+// -- Lazy layouts --
+// import EmptyLayout from "./layout/EmptyLayout";
+const EmptyLayout = lazy(() => import("./layout/EmptyLayout"));
+const LandingLayout = lazy(() => import("./layout/LandingLayout"));
+
+// -- Lazy components --
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+
+const router = createBrowserRouter([
+  // -- Landing (public) --
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<Loading fullscreen />}>
+        <LandingLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+    ],
+  },
+
+  // -- Sign in (public) --
+  {
+    path: "auth",
+    element: (
+      <Suspense fallback={<Loading fullscreen />}>
+        <EmptyLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "sign-in",
+        element: <SignInForm />,
+      },
+
+      { path: "sign-up", element: <SignUpForm /> },
+    ],
+  },
+
+  // -- Dashboard (protected) --
+  {
+    path: "/dashboard",
+    element: (
+      <Suspense fallback={<Loading fullscreen />}>
+        <Dashboard />
+      </Suspense>
+    ),
+  },
+]);
+
+export default function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SignInForm />} />
-          <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/landing" element={<Landing />} />
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </>
   );
-};
-
-export default App;
+}

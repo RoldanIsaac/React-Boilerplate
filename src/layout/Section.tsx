@@ -33,7 +33,7 @@ const Section: React.FC<SectionProps> = ({
   return (
     <div
       id={id}
-      className={`relative flex flex-col md:flex-row min-w-[399px] 
+      className={`relative flex flex-col md:flex-row min-w-[399px] min-h-[100vh] 
    ${className || ""}`}
       style={styles}
     >
@@ -45,7 +45,12 @@ const Section: React.FC<SectionProps> = ({
         ></div>
       )}
       {/* Content */}
-      <div className="relative z-10 min-w-full">{children}</div>
+      <div
+        id="section__inner"
+        className="relative px-4 sm:px-6 lg:px-8 z-10 min-w-full"
+      >
+        {children}
+      </div>
     </div>
   );
 };
